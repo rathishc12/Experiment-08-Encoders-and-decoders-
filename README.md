@@ -55,42 +55,93 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+### Step 1: 
+create module encoder and decoder.
+
+### Step 2: 
+Get inputs and outputs for encoders and decoders.
+
+### Step 3: 
+perform or operation for encoder and and logic for decoders.
+
+### Step 4: 
+perform RTL LOGIC and get waveform.
+
+### Step 5: 
+End the module.
 
 
 
 ### PROGRAM 
-/*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by:S.PRADEEP 
+RegisterNumber:212222100034
+```
+### Encoder:
+```
+module encoder (d0,d1,d2,d3,d4,d5,d6,d7,x,y,z);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output x,y,z;
+or (x,d4,d5,d6,d7);
+or (y,d2,d3,d5,d7);
+or (z,d1,d3,d5,d7);
+endmodule
+```
 
-
-
-
-
+### Decoder:
+```
+module decoder (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input a0,a1,a2;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+wire a0bar,a1bar,a2bar;
+not (a0bar,a0);
+not (a1bar,a1);
+not (a2bar,a2);
+and (y0,a0bar,a1bar,a2bar);
+and (y1,a0bar,a1bar,a2);
+and (y2,a0bar,a1,a2bar);
+and (y3,a0bar,a1,a2);
+and (y4,a0,a1bar,a2bar);
+and (y5,a0,a1bar,a2);
+and (y6,a0,a1,a2bar);
+and (y7,a0,a1,a2);
+endmodule
+```
 
 ### RTL LOGIC  
+### Encoder:
+![Screenshot 2023-05-14 233135](https://github.com/Gokul0117/Experiment-08-Encoders-and-decoders-/assets/121165938/4ea06922-da7c-499e-a13d-26852ed340f7)
 
 
 
 
 
 
+### Decoder:
+![Screenshot 2023-05-14 233332](https://github.com/Gokul0117/Experiment-08-Encoders-and-decoders-/assets/121165938/aa2851d3-e96f-439a-892c-e7bb68997655)
 
 
 ### TIMING DIGRAMS  
+### Encoder:
+![Screenshot 2023-05-14 233429](https://github.com/Gokul0117/Experiment-08-Encoders-and-decoders-/assets/121165938/bfa453b2-109a-4e6c-b948-b9cff99d9aea)
 
 
 
 
+### Decoder:
+![Screenshot 2023-05-14 233940](https://github.com/Gokul0117/Experiment-08-Encoders-and-decoders-/assets/121165938/a59867e7-2a92-4861-93ff-430f480a372c)
 
 ### TRUTH TABLE 
+### Encoder:
+![Screenshot 2023-05-14 234049](https://github.com/Gokul0117/Experiment-08-Encoders-and-decoders-/assets/121165938/23381e88-0ae5-459c-9b2f-e569e3aa7824)
+### Decoder:
+![Screenshot 2023-05-14 234147](https://github.com/Gokul0117/Experiment-08-Encoders-and-decoders-/assets/121165938/73bcd837-1c0c-4eb6-9347-b4f328cfe68d)
 
 
 
 
 
 
-### RESULTS 
+### RESULTS:
+Thus the program to desing encoder and decoder is completed.
